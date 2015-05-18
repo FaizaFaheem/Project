@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">User_App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="button1_text">Report a Crime</string>
+    <string name="image_name">image</string>
+    <string name="button_send">SEND</string>
+    <string name="thankyou_label">Thank you Sir.. </string>
+   <string name="First_label" color ="red" >Witnessing any illegal activity????</string>
+    <string name="Second_label">REPORT NOW </string>
+    <string name="DES_Label">Description </string>
+    <string name="textview_try"> tryy</string>
+    <string name="lalala">lalala </string>
+</resources>
