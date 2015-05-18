@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Player Search</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+<style type="text/css">
+  	input.error { background-color: yellow; }
+</style>
+</head>
+
+<body>
+<h1>Find nearest police station</h1>
+<form method="post" action="Nearestpolice" enctype="multipart/form-data">
+  <div class="control-group">
+    <label class="control-label" for="Crime Cell">Crime Photo:</label>
+    <div class="controls">
+      <input type="file" name ="image" placeholder="sample image" class="form-control" required />
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="player">Latitude:</label>
+    <div class="controls">
+      <input type="text" name ="latitude" placeholder="latitude of sender" class="form-control" />
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="player">Longitude:</label>
+    <div class="controls">
+      <input type="text" name ="longitude" placeholder="longitude of sender" class="form-control" />
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="player">Description:</label>
+    <div class="controls">
+    <input type="text" name ="description" placeholder="description of crime" class="form-control" />
+      <!--<select name="descirption">
+        <option value="car-robbery">Car Robbery</option>
+        <option value="wall-chalking">Wall Chalking</option>
+        <option value="kidnapping">Kidnapping</option>
+        <option value="harassment">Harassment</option>
+        <option value="theft">Theft</option>
+        <option value="bribery">Bribery</option>
+        <option value="murder">Murder</option>
+        <option value="physical-violence">Physical Violence</option>
+        <option value="other">Other</option>
+      </select>-->
+    </div>
+  </div>
+  <div class="control-group">
+  <p class="controls">
+      <button type="submit" class="btn">Submit</button>
+    </p>
+    </div>
+</form>
+</body>
+</html>

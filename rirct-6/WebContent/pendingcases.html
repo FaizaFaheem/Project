@@ -1,0 +1,330 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
+<head>
+    <!--
+    Created by Artisteer v3.1.0.48375
+    Base template (without user's data) checked by http://validator.w3.org : "This page is valid XHTML 1.0 Transitional"
+    -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <script src="js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript">
+
+      function ShowCrimes()
+      {
+        //alert("show crimes");
+        var tablehtml='<th colspan="2">Case Name</th><th colspan="2">Latitude</th><th colspan="2">Longitude</th><th colspan="2">Photo</th><th colspan="2">Status</th>';
+        $.getJSON('/rirct/api/showcrimes', function(data) 
+          {
+              var arrayOfObjects = data;
+              var table = document.getElementById("myTable");
+              for (var i = 0; i < arrayOfObjects.length; i++) 
+              {
+                var object = arrayOfObjects[i];
+                tablehtml=tablehtml+'<tr>';
+                var j=0;
+                for (var property in object) 
+                {
+                  if (j==3)
+                  {
+                    
+                     tablehtml=tablehtml+'<td colspan="2"><img src="data:image/jpg;base64,'+object[property]+'" alt="Crime photo" height = "70px" width = "70px"/></td>';
+                     //j=0;
+                  }
+                  else
+                  {
+                    tablehtml=tablehtml+'<td align="center" colspan="2">'+object[property]+'</td>';
+                    console.log(tablehtml);
+                    
+                  } 
+                j++;
+              }
+              tablehtml=tablehtml+'</tr>';
+            }
+        document.getElementById('myTable').innerHTML = tablehtml;      
+          });
+      }
+    </script>
+    
+     <style>
+    div.art-logo {
+    top: 20px;
+      margin-left: 50px;
+    }
+     #footer{
+    background:rgb(196,176,139);
+    text-align: center;
+    padding: 15px 0px;
+    min-width: 100%;
+    float: left;
+    max-height: 40px;
+    }  
+    </style>
+
+</head>
+<body onload="ShowCrimes()">
+<div id="art-main">
+    <div class="cleared reset-box"></div>
+
+
+<div class="cleared reset-box"></div>
+                <div><img src="images/background-2.jpg" height="260" width="1250" >
+                <div class="art-logo" name = "logo">
+                <img src="images/header-2.jpg" height="200" width="250"  align="right"
+                    background-repeat="repeat-y">
+                                <!--  <h1 class="art-logo-name"><a href="#">CRIME CELL</a></h1>
+                                                 <h2 class="art-logo-text">Say No to CRIMES</h2>-->
+                                </div>
+                </div>
+
+
+
+    <div class="cleared reset-box"></div>
+<div class="art-bar art-nav">
+<div class="art-nav-outer">
+<div class="art-nav-wrapper">
+<div class="art-nav-inner">
+  <ul class="art-hmenu">
+    <li>
+      <a href="policepanel.html" >Home</a>
+    </li> 
+  </ul>
+  <ul class="art-hmenu">
+    <li><a href="pendingcases.html" class="active">Pending Cases</a></li>
+    </ul>
+    <ul class="art-hmenu">
+    <li><a href="completedcases.html">Completed Cases</a></li>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="cleared reset-box"></div>
+<div class="art-box art-sheet">
+        <div class="art-box-body art-sheet-body">
+            <div class="art-layout-wrapper">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-sidebar1">
+<div class="art-box art-vmenublock">
+    <div class="art-box-body art-vmenublock-body">
+                <div class="art-bar art-vmenublockheader">
+                    <h3 class="t">Pages</h3>
+                </div>
+                <div class="art-box art-vmenublockcontent">
+                    <div class="art-box-body art-vmenublockcontent-body">
+                <ul class="art-vmenu">
+  <li>
+        <!--
+    <a href="#">Item</a>
+    <ul>
+      <li>
+                <a href="#">Subitem 1</a>
+
+            </li>
+      <li>
+                <a href="#">Subitem 2</a>
+
+            </li>
+      <li>
+                <a href="#">Subitem 3</a>
+
+            </li>
+    </ul>
+    -->
+  </li> 
+  <li>
+    <a href="#">CRIME UPDATES</a>
+    <ul>
+      <li>
+                <a href="#">Top 10</a>
+
+            </li>
+    </ul>
+  </li> 
+  <li>
+    <a href="#">PICTURES</a>
+  </li> 
+  <li>
+    <a href="#">ARCHIVES</a>
+    <ul>
+      <li>
+                <a href="#">2014</a>
+    <ul>
+      <li>
+                <a href="#">January</a>
+
+            </li>
+      <li>
+                <a href="#">February</a>
+
+            </li>
+      <li>
+                <a href="#">March</a>
+
+            </li>
+    </ul>
+
+            </li>
+      <li>
+                <a href="#">2015</a>
+    <ul>
+      <li>
+                <a href="#">January</a>
+
+            </li>
+      <li>
+                <a href="#">February</a>
+
+            </li>
+      <li>
+                <a href="#">March</a>
+
+            </li>
+    </ul>
+
+            </li>
+      <li>
+                <a href="#">2016</a>
+    <ul>
+      <li>
+                <a href="#">January</a>
+
+            </li>
+      <li>
+                <a href="#">February</a>
+
+            </li>
+      <li>
+                <a href="#">March</a>
+
+            </li>
+    </ul>
+
+            </li>
+    </ul>
+  </li> 
+  <li>
+    <a href="#">FORUM</a>
+  </li> 
+  <li>
+    <!--<a href="#">About</a>-->
+  </li> 
+  <li>
+    <!--<a href="#">Contact</a>-->
+  </li> 
+</ul>
+                
+                                    <div class="cleared"></div>
+                    </div>
+                </div>
+    <div class="cleared"></div>
+    </div>
+</div>
+<div class="art-box art-block">
+    <div class="art-box-body art-block-body">
+        <!--
+                <div class="art-bar art-blockheader">
+                    <h3 class="t">Search</h3>
+                </div>
+            -->
+                <div class="art-box art-blockcontent">
+                    <div class="art-box-body art-blockcontent-body">
+                <div class="widget-content">
+  <div id="CustomSearch1_form">
+    <form class="gsc-search-box" accept-charset="utf-8" action="">
+      <table cellspacing="0" cellpadding="0" class="gsc-search-box">
+        <tr>
+            <!--
+          <td class="gsc-input">
+            <input type="text" size="10" class="gsc-input" name="search" title="Search" />
+          </td>
+      -->
+          <!--<td class="gsc-search-button">
+            <input type="submit" value="Search" class="gsc-search-button" title="Search" />
+          </td>-->
+        </tr>
+      </table>
+      <table cellspacing="0" cellpadding="0" class="gsc-branding">
+        <tbody>
+          <tr>
+            <td class="gsc-branding-user-defined"></td>
+            <td class="gsc-branding-text">
+             <!-- <div class="gsc-branding-text">powered by</div>-->
+            </td>
+            <td class="gsc-branding-img-noclear">
+             <!-- <img src="./images/small-logo.png" class="gsc-branding-img-noclear" alt="" />-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>                
+                                    <div class="cleared"></div>
+                    </div>
+                </div>
+    <div class="cleared"></div>
+    </div>
+</div>
+
+                          <div class="cleared"></div>
+                        </div>
+                        <div class="art-layout-cell art-content">
+<div class="art-box art-post">
+    <div class="art-box-body art-post-body">
+<div class="art-post-inner art-article">
+<h2 class="art-postheader"><span class="art-postheadericon">CRIMES</span></h2>
+    <!--<a href="#" rel="bookmark" title="Permanent Link to thiPost">Link</a>,-->
+<!-- <a class="visited" href="#" rel="bookmark" title="Visited Hyperlink">Visited</a>, <a class="hovered" href="#" rel="bookmark" title="Hovered Hyperlink">Hovered</a>-->
+                                
+                                                                <div class="art-postheadericons art-metadata-icons">
+                    <span class="art-postdateicon">11/5/2008</span> | <span class="art-postauthoricon">Author <a href="#" title="Posts by Admin">Admin</a></span> | <span class="art-postemailicon"></span> | <span class="art-postediticon"><a href="#" title="Edit">Edit</a></span>
+                </div>
+                <div class="art-postcontent">
+
+<p id="showData">
+</p>
+
+                </div>
+
+    <div class="cleared"></div>
+    </div>
+</div>
+<div class="art-box art-post">
+    <div class="art-box-body art-post-body">
+<div class="art-post-inner art-article">
+
+<h3>CRIME REPORT</h3>
+<table id="myTable" width="800px" border="0" cellspacing="0" cellpadding="0">
+
+<tbody>
+<tr>
+</tr>
+</tbody></table>
+<br />
+
+                </div>
+
+
+
+
+                          <div class="cleared"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+            
+        <div class="cleared"></div>
+        </div>
+    </div>
+    <div id = "footer">
+<p></p><br></br>
+  <p>@Copyright by crim NULL</p>
+  </div>
+</div>
+
+</body>
+</html>

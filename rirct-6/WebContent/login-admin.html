@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript">
+ /*This Script allows people to enter by using a form that asks for a
+UserID and Password*/
+function pasuser(form) {
+if (form.id.value=="Hira") { 
+if (form.pass.value=="KitKat") {              
+location="adminpanel.html" 
+} else {
+alert("Invalid Password")
+}
+} else {  alert("Invalid UserID")
+}
+}
+//-->
+
+</script>
+</head>
+<body>
+<h1>Admin Login</h1>
+
+<table bgcolor="white" cellpadding="12" border="1">
+<tr><td>Username</td><td><form name="login"><input
+name="id" type="text"></td></tr>
+<tr><td>Password:</td><td><input name="pass"
+type="password"></td></tr>
+<tr><td></td><td><center><input type="button" value="Login"
+onClick="pasuser(this.form)"></form> </center></td></tr>
+</table>
+</body>
+</html>
